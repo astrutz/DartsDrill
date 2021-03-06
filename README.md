@@ -1,6 +1,8 @@
 # DartsDrill
-![GitHub](https://img.shields.io/github/license/astrutz/DartsDrill?color=blue) tbd deploymentinfos and maybe issues
-> DartsDrill is a multi-plattform darts training app, which allows you to create your individual training plan and practise with different exercises and drills.
+![GitHub](https://img.shields.io/github/license/astrutz/DartsDrill?color=blue) tbd deploymentinfos and maybe issues   
+tbd icon  
+tbd downloadbutton  
+> DartsDrill is a multi-plattform darts training app, which allows you to create your individual training plan and practise with different exercises and drills.    
 
 ## Table of contents
 * [General info](#general-info)
@@ -39,7 +41,7 @@ To-do list:
 ## Milestones
 |1. Organization|2. Conzept|3. Design|4. Implementation|5. Release|  
 |:-------------:|:--------:|:-------:|:---------------:|:-----------------:|
-|![](https://img.shields.io/badge/Status-done-brightgreen)|![](https://img.shields.io/badge/Status-in%20work-yellow)|![](https://img.shields.io/badge/Status-open-red)|![](https://img.shields.io/badge/Status-open-red)|![](https://img.shields.io/badge/Status-open-red)|  
+|![](https://img.shields.io/badge/Status-done-brightgreen)|![](https://img.shields.io/badge/Status-in%20work-yellow)|![](https://img.shields.io/badge/Status-open-red)|![](https://img.shields.io/badge/Status-open-red)|![](https://img.shields.io/badge/Status-open-red)|
 |![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/astrutz/DartsDrill/5?color=brightgreen&label=Progress)|![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/astrutz/DartsDrill/1?color=yellow&label=Progress)|![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/astrutz/DartsDrill/2?color=red&label=Progress)|![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/astrutz/DartsDrill/3?color=red&label=Progress)|![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/astrutz/DartsDrill/4?color=red&label=Progress)|
 
 
