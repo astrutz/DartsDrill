@@ -11,7 +11,7 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+Darts has seen a boom in recent years. There are many apps for counting and training, but none offer the opportunity to create training plans yourself and improve your game in the long term. DartsDrill is a free, ad-free, open-source app that runs on multiple platforms and is designed to help darts players train and throw better darts.
 
 ## Screenshots
 tbd
