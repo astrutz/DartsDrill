@@ -1,6 +1,8 @@
 # DartsDrill
 ![GitHub](https://img.shields.io/github/license/astrutz/DartsDrill?color=blue) tbd deploymentinfos and maybe issues   
-tbd icon  
+<img src="https://raw.githubusercontent.com/astrutz/DartsDrill/master/docs/design/AppIcon.png" alt="" data-canonical-src="https://github.com/astrutz/DartsDrill/blob/master/docs/design/AppIcon.png" width="200" height="200" /> 
+
+
 tbd downloadbutton  
 > DartsDrill is a multi-plattform darts training app, which allows you to create your individual training plan and practise with different exercises and drills.    
 
