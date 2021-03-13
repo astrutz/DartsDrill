@@ -2,6 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/astrutz/DartsDrill?color=blue)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/astrutz/DartsDrill/DartsDrill%20(DEV)/dev?label=build%20%28dev%29)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/astrutz/DartsDrill/DartsDrill%20(PROD)/master?label=build%20%28prod%29)  
+  
 <img src="https://raw.githubusercontent.com/astrutz/DartsDrill/master/docs/design/AppIcon.png" alt="" data-canonical-src="https://github.com/astrutz/DartsDrill/blob/master/docs/design/AppIcon.png" width="200" height="200" /> 
 
 
