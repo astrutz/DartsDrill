@@ -30,5 +30,7 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: build/web
+          repository-name: astrutz/astrutz.github.io
+          token: ${{ secrets.PAGES_SECRET }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
