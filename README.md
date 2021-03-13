@@ -3,7 +3,7 @@
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/astrutz/DartsDrill/DartsDrill%20(DEV)/dev?label=build%20%28dev%29)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/astrutz/DartsDrill/DartsDrill%20(PROD)/master?label=build%20%28prod%29)  
   
- DartsDrill is a multi-plattform darts training app, which allows you to create your individual training plan and practise with different exercises and drills.    
+ DartsDrill is a multi-plattform darts training app, which allows you to create your individual training plan and practise with different exercises and drills. Data synchronization and analyzable statistics help to improve your game.    
    
 <img src="https://raw.githubusercontent.com/astrutz/DartsDrill/master/docs/design/AppIcon.png" alt="" data-canonical-src="https://github.com/astrutz/DartsDrill/blob/master/docs/design/AppIcon.png" width="200" height="200" /> 
 
