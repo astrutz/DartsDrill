@@ -28,9 +28,8 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          target_branch: gh-pages
           build_dir: build/web
-          repository-name: astrutz/astrutz.github.io
-          token: ${{ secrets.PAGES_SECRET }}
+          repo: astrutz/astrutz.github.io
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.PAGES_SECRET }}
