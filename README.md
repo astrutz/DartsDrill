@@ -26,6 +26,8 @@ Darts has seen a boom in recent years. There are many apps for counting and trai
 ## Screenshots
 ![Hauptmenü (Buttons)](https://github.com/astrutz/DartsDrill/blob/master/docs/design/Hauptmen%C3%BC%20(Buttons).png)
 
+![Hauptmenü (Buttons)](https://github.com/astrutz/DartsDrill/blob/master/docs/design/Round%20the%20World.png)
+
 ## Technologies
 * tbd Tech 1 - version 1.0
 * tbd Tech 2 - version 2.0
