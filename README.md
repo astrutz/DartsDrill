@@ -26,12 +26,12 @@ Darts has seen a boom in recent years. There are many apps for counting and trai
 ## Screenshots
 ![Hauptmenü (Buttons)](https://github.com/astrutz/DartsDrill/blob/master/docs/design/Hauptmen%C3%BC%20(Buttons).png)
 
-![Hauptmenü (Buttons)](https://github.com/astrutz/DartsDrill/blob/master/docs/design/Round%20the%20World.png)
+![Round the World](https://github.com/astrutz/DartsDrill/blob/master/docs/design/Round%20the%20World.png)
 
 ## Technologies
-* tbd Tech 1 - version 1.0
-* tbd Tech 2 - version 2.0
-* tbd Tech 3 - version 3.0
+* [Flutter - version 2.0.2](https://flutter.dev/docs/development/tools/sdk/releases)
+* [Dart - version 2.12.1](https://dart.dev/get-dart)
+* [Material Components for Flutter](https://github.com/material-components/material-components-flutter)
 
 ## Setup
 tbd: Describe how to install / setup your local environement / add link to demo version.
