@@ -23,6 +23,9 @@ jobs:
     - run: flutter build apk
     - run: flutter build ios --release --no-codesign
     - run: flutter build web
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
     -
         name: Deploy to GitHub Pages
         if: success()
