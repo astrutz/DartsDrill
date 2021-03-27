@@ -49,21 +49,21 @@ class Survive61 implements Game {
 
   @override
   void updateLastThrows(Answer answer) {
-    ThrowSet throwSet;
+    ThrowSet _throwSet;
     if (answer.value == 0) {
-      throwSet = ThrowSet('NS', 'NS', 'NS');
+      _throwSet = ThrowSet('NS', 'NS', 'NS');
     } else {
-      throwSet = _nextTarget.ways[0];
+      _throwSet = _nextTarget.ways[0];
     }
     _lastTargets.add(_nextTarget.value);
-    _lastThrows.add(throwSet);
+    _lastThrows.add(_throwSet);
   }
 
   @override
   void resetThrow() {
     if (_lastThrows.isNotEmpty) {
-      int difference = _lastThrows.last.getScore() == 0 ? -1 : 10;
-      _nextTarget = Finishes().getByValue((_nextTarget.value - difference));
+      int _difference = _lastThrows.last.getScore() == 0 ? -1 : 10;
+      _nextTarget = Finishes().getByValue((_nextTarget.value - _difference));
       _lastThrows.removeLast();
       _lastTargets.removeLast();
     }
@@ -71,19 +71,19 @@ class Survive61 implements Game {
 
   @override
   String getLastTargetText() {
-    String throwString = 'Letzte Würfe:\n';
+    String _throwString = 'Letzte Würfe:\n';
     if (_lastThrows.isEmpty) {
       return '';
     }
     List<int> _lastFiveTargets = _lastTargets.length >= 5 ? _lastTargets.sublist(_lastTargets.length - 5, _lastTargets.length) : _lastTargets;
     List<ThrowSet> _lastFiveThrows = _lastThrows.length >= 5 ? _lastThrows.sublist(_lastThrows.length - 5, _lastThrows.length) : _lastThrows;
     _lastFiveTargets.forEach((target) {
-      ThrowSet throwSet = _lastFiveThrows[_lastFiveTargets.indexOf(target)];
-      throwString += '$target    ';
-      throwString += '${throwSet.getScore() > 0 ? '✓' : '✕'}';
-      throwString += '\n';
+      ThrowSet _throwSet = _lastFiveThrows[_lastFiveTargets.indexOf(target)];
+      _throwString += '$target    ';
+      _throwString += '${_throwSet.getScore() > 0 ? '✓' : '✕'}';
+      _throwString += '\n';
     });
-    return throwString;
+    return _throwString;
   }
 
   @override
