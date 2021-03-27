@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'themes/theme.dart';
-import 'screens/mainMenu.dart';
+import 'screens/MainMenu.dart';
 
 void main() => runApp(_App());
 

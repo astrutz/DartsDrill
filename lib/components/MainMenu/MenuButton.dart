@@ -5,13 +5,13 @@ class MenuButton extends StatelessWidget {
   final Function onPressed;
   final IconData icon;
 
-  MenuButton({@required this.buttonText, this.onPressed, @required this.icon});
+  MenuButton({required this.buttonText, required this.onPressed, required this.icon});
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
       child: ElevatedButton.icon(
-        onPressed: onPressed,
+        onPressed: (onPressed as void Function()?),
         label: Padding(
           padding: const EdgeInsets.only(
             left: 28,
@@ -22,7 +22,7 @@ class MenuButton extends StatelessWidget {
           child: Text(
             buttonText,
             textAlign: TextAlign.left,
-            style: Theme.of(context).textTheme.subtitle1.copyWith(
+            style: Theme.of(context).textTheme.subtitle1?.copyWith(
                   color: Color(0xFFFFFFFF),
                 ),
           ),

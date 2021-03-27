@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'gameList.dart';
-import '../components/menuButton.dart';
+import 'GameList.dart';
+import '../components/MainMenu/MenuButton.dart';
 
 class MainMenuScreen extends StatelessWidget {
   @override
@@ -18,22 +18,24 @@ class MainMenuScreen extends StatelessWidget {
           )
         ],
         title: Text('DartsDrill'),
+        brightness: Brightness.dark,
       ),
       body: ListView(
+        padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
         children: <Widget>[
           for (Map i in screens)
             MenuButton(
                 buttonText: i['title'],
-                onPressed: i['screen'] != null
-                    ? () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return i['screen'];
-                          }),
-                        );
-                      }
-                    : null,
+                onPressed: () {
+                  if (i['screen'] != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return i['screen'];
+                      }),
+                    );
+                  }
+                },
                 icon: i['icon']),
         ],
       ),
@@ -42,11 +44,7 @@ class MainMenuScreen extends StatelessWidget {
 
   List<Map> getScreens() {
     return [
-      {
-        'title': 'Trainingsspiel starten',
-        'screen': GameListScreen(),
-        'icon': Icons.play_arrow_outlined
-      },
+      {'title': 'Trainingsspiel starten', 'screen': GameListScreen(), 'icon': Icons.play_arrow_outlined},
       {'title': 'Meine Trainingspläne', 'icon': Icons.calendar_today_rounded},
       {'title': 'Statistiken', 'icon': Icons.data_usage},
       {'title': 'Daten importieren', 'icon': Icons.import_export},
