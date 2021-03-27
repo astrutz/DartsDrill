@@ -23,61 +23,61 @@ class AroundTheWorldGame implements Game {
   @override
   void registerThrow(Answer answer) {
     updateLastThrows(answer);
-    int nextValue = _nextTarget.value + answer.value;
-    if (nextValue > 18) {
+    int _nextValue = _nextTarget.value + answer.value;
+    if (_nextValue > 18) {
       answers[3].disable();
     }
-    if (nextValue > 19) {
+    if (_nextValue > 19) {
       answers[2].disable();
     }
-    if (nextValue > 20) {
+    if (_nextValue > 20) {
       _isFinished = true;
       return;
     } else {
-      _nextTarget = _fields.getByName('S$nextValue');
+      _nextTarget = _fields.getByName('S$_nextValue');
     }
   }
 
   @override
   void updateLastThrows(Answer answer) {
-    ThrowSet throwSet;
+    ThrowSet _throwSet;
     switch (answer.value) {
       case 0:
-        throwSet = ThrowSet('NS', 'NS', 'NS');
+        _throwSet = ThrowSet('NS', 'NS', 'NS');
         break;
       case 1:
-        int thisValue = _nextTarget.value;
-        String? secondThrow = answers[1].enabled ? 'NS' : null;
-        String? thirdThrow = answers[2].enabled ? 'NS' : null;
-        throwSet = ThrowSet('S$thisValue', secondThrow, thirdThrow);
+        int _thisValue = _nextTarget.value;
+        String? _secondThrow = answers[1].enabled ? 'NS' : null;
+        String? _thirdThrow = answers[2].enabled ? 'NS' : null;
+        _throwSet = ThrowSet('S$_thisValue', _secondThrow, _thirdThrow);
         break;
       case 2:
-        int thisValue = _nextTarget.value;
-        int nextValue = _nextTarget.value + 1;
+        int _thisValue = _nextTarget.value;
+        int _nextValue = _nextTarget.value + 1;
         String? thirdThrow = answers[2].enabled ? 'NS' : null;
-        throwSet = ThrowSet('S$thisValue', 'S$nextValue', thirdThrow);
+        _throwSet = ThrowSet('S$_thisValue', 'S$_nextValue', _thirdThrow);
         break;
       default:
-        int thisValue = _nextTarget.value;
-        int nextValue = _nextTarget.value + 1;
-        int nextNextValue = _nextTarget.value + 2;
-        throwSet = ThrowSet('S$thisValue', 'S$nextValue', 'S$nextNextValue');
+        int _thisValue = _nextTarget.value;
+        int _nextValue = _nextTarget.value + 1;
+        int _nextNextValue = _nextTarget.value + 2;
+        _throwSet = ThrowSet('S$_thisValue', 'S$_nextValue', 'S$_nextNextValue');
         break;
     }
-    _lastThrows.add(throwSet);
+    _lastThrows.add(_throwSet);
   }
 
   @override
   void resetThrow() {
     if (_lastThrows.isNotEmpty) {
       int _lastValue = _nextTarget.value;
-      int hits = 0;
+      int _hits = 0;
       _lastThrows.last.getThrows().forEach((field) {
         if (field?.value != 0) {
-          hits++;
+          _hits++;
         }
       });
-      _lastValue -= hits;
+      _lastValue -= _hits;
       _nextTarget = _fields.getByName('S$_lastValue');
       _lastThrows.removeLast();
     }
@@ -85,32 +85,31 @@ class AroundTheWorldGame implements Game {
 
   @override
   String getLastTargetText() {
-    String throwString = 'Letzte Würfe:\n';
+    String _throwString = 'Letzte Würfe:\n';
     if (_lastThrows.isEmpty) {
       return '';
     }
     List<ThrowSet> _lastFiveThrows = _lastThrows.length >= 5 ? _lastThrows.sublist(_lastThrows.length - 5, _lastThrows.length) : _lastThrows;
     _lastFiveThrows.forEach((throwSet) {
       if (throwSet.getScore() == 0) {
-        throwString += 'No Score';
+        _throwString += 'No Score';
       } else {
         List<Field?> fields = throwSet.getThrows();
         if (fields[0]?.value != 0) {
-          throwString += fields[0]?.description ?? '';
+          _throwString += fields[0]?.description ?? '';
         }
         if (fields[1]?.value != 0) {
-          throwString += ', ';
-          throwString += fields[1]?.description ?? '';
+          _throwString += ', ';
+          _throwString += fields[1]?.description ?? '';
         }
         if (fields[2]?.value != 0) {
-          throwString += ', ';
-          throwString += fields[2]?.description ?? '';
+          _throwString += ', ';
+          _throwString += fields[2]?.description ?? '';
         }
       }
-
-      throwString += '\n';
+      _throwString += '\n';
     });
-    return throwString;
+    return _throwString;
   }
 
   @override
