@@ -9,7 +9,7 @@ class TargetArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      color: Colors.grey[400],
       width: double.infinity,
       child: Row(
         children: [

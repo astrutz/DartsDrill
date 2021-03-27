@@ -8,7 +8,11 @@ class Answer {
   String get title => _title;
   int get value => _value;
   bool get enabled => _enabled;
-  set enabled(bool status) {
-    _enabled = status;
+  enable() {
+    _enabled = true;
+  }
+
+  disable() {
+    _enabled = false;
   }
 }

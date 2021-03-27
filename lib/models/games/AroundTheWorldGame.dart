@@ -25,10 +25,10 @@ class AroundTheWorldGame implements Game {
     updateLastThrows(answer);
     int nextValue = _nextTarget.value + answer.value;
     if (nextValue > 18) {
-      answers[3].enabled = false;
+      answers[3].disable();
     }
     if (nextValue > 19) {
-      answers[2].enabled = false;
+      answers[2].disable();
     }
     if (nextValue > 20) {
       _isFinished = true;
