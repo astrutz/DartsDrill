@@ -22,6 +22,14 @@ jobs:
     - run: flutter build apk
     - run: flutter build ios --release --no-codesign
     - run: flutter build web
+    - uses: actions/upload-artifact@v2
+      with:
+        name: android
+        path: build/app/outputs/flutter-apk/app-release.apk
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ios
+        path: Users/runner/work/DartsDrill/DartsDrill/build/ios/iphoneos/Runner.app
     -
         name: Deploy to GitHub Pages
         if: success()
