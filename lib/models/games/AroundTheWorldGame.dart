@@ -54,7 +54,7 @@ class AroundTheWorldGame implements Game {
       case 2:
         int _thisValue = _nextTarget.value;
         int _nextValue = _nextTarget.value + 1;
-        String? thirdThrow = answers[2].enabled ? 'NS' : null;
+        String? _thirdThrow = answers[2].enabled ? 'NS' : null;
         _throwSet = ThrowSet('S$_thisValue', 'S$_nextValue', _thirdThrow);
         break;
       default:
