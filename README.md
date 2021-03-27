@@ -7,9 +7,9 @@
    
 <img src="https://raw.githubusercontent.com/astrutz/DartsDrill/master/docs/design/AppIcon.png" alt="" data-canonical-src="https://github.com/astrutz/DartsDrill/blob/master/docs/design/AppIcon.png" width="200" height="200" /> 
 
-
-tbd downloadbutton  
-
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/astrutz/DartsDrill?style=for-the-badge&sort=semver&label=Download)](https://github.com/astrutz/DartsDrill/releases/latest)
+ 
+[Demo in browser](https://astrutz.github.io)
 
 ## Table of contents
 * [General info](#general-info)
@@ -34,18 +34,25 @@ Darts has seen a boom in recent years. There are many apps for counting and trai
 * [Material Components for Flutter](https://github.com/material-components/material-components-flutter)
 
 ## Setup
-tbd: Describe how to install / setup your local environement / add link to demo version.
+```
+flutter config --enable-web
+flutter pub get
+flutter run
+```
+If there are multiple devices connected, use the `-d` flag to chose your device as [described here](https://flutter.dev/docs/get-started/web).
+[Demo in browser](https://astrutz.github.io)
 
 ## Features
-tbd: List important issues or a short list of features  
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Play over 20 different training games
+* Create own training plans and play them manually or at a given intervall
+* See your stats and link them between different devices
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Implement more games
+* Integrate plans
+* Use adaptive design
+* Dark mode (yeah!)
+* See issues for more
 
 ## Milestones
 |1. Organization|2. Concept|3. Design|4. Implementation|5. Release|  
@@ -55,7 +62,10 @@ To-do list:
 
 
 ## Changelog
-tbd
+### Version 0.1-alpha
+* Basic menu and functionalities
+* GameMode to play through and framework for more games
+* Example games: "Around the World" and "Survive 61"
 
 ## Contact
 Created by [@astrutz](https://www.github.com/astrutz) - feel free to contact me!
