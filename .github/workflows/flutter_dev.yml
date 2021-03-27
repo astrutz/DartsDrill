@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: subosito/flutter-action@v1.4.0
+    - uses: subosito/flutter-action@v1
       with:
         channel: beta
+    - run: ls
+    - run: ls lib/
     - run: flutter config --enable-web
     - run: flutter pub get
     - run: flutter build web
