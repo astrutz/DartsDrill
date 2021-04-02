@@ -87,7 +87,7 @@ class Survive61 implements Game {
   }
 
   @override
-  String getAlternativeText() {
+  String getAdditionalText() {
     String _alternativeText = '';
     _nextTarget.ways.forEach((way) {
       _alternativeText += way.getThrows()[0] != null ? way.getThrows()[0]!.name + ' ' : '';

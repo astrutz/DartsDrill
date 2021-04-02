@@ -113,7 +113,7 @@ class AroundTheWorldGame implements Game {
   }
 
   @override
-  String getAlternativeText() {
+  String getAdditionalText() {
     String _alternativeText = '';
     if (_nextTarget.value < 20) {
       int _nextValue = _nextTarget.value + 1;

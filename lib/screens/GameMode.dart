@@ -1,6 +1,6 @@
 import 'package:dartsdrill/components/GameMode/AnswerArea.dart';
 import 'package:dartsdrill/components/GameMode/TargetArea.dart';
-import 'package:dartsdrill/components/GameMode/StatsFooter.dart';
+import 'package:dartsdrill/components/GameMode/StatsArea.dart';
 import 'package:dartsdrill/models/Answer.dart';
 import 'package:dartsdrill/models/Game.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class _GameModeState extends State<GameMode> {
               child: AnswerArea(_registerThrow, widget.game, appBarHeight),
               flex: 8,
             ),
-            StatsFooter(widget.game, appBarHeight)
+            StatsArea(widget.game, appBarHeight)
           ],
         ),
       ),

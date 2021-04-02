@@ -27,7 +27,7 @@ class NextTargetArea extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            game.getAlternativeText(),
+            game.getAdditionalText(),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.subtitle1,
           ),
