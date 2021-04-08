@@ -6,6 +6,8 @@ import '../Game.dart';
 
 class AroundTheWorldGame implements Game {
   final String _name = 'Around the World';
+  final String _description = 'todo';
+  final String _metaText = 'Level: Anfänger\nFokus: Sccoring\nDauer: 10 Minuten';
   Field _nextTarget = Fields().getByName('S1');
   String _question = 'Wie viele Felder wurden getroffen?';
   String _additionalText = '';
@@ -138,7 +140,14 @@ class AroundTheWorldGame implements Game {
     return _nextTarget.description;
   }
 
+  @override
+  String getStatStringTMP() {
+    return 'Dauer: tbd\n\nGetroffene Finishes: tbd\n\nHöchstes Finish: 85\n\nNiedrigstes Finish: 53';
+  }
+
   String get name => _name;
+  String get description => _description;
+  String get metaText => _metaText;
   dynamic get nextTarget => _nextTarget;
   String get question => _question;
   String get additionalText => _additionalText;

@@ -6,6 +6,9 @@ import '../Game.dart';
 
 class Survive61 implements Game {
   final String _name = 'Survive 61';
+  final String _description =
+      'Bei Survive 61 gilt es ein Finish mit drei Darts zu checken. Checkt man nicht, sinkt der Score um 1 und man versucht das nächste Finish. Checkt man, erhöht man um 10. Man beginnt mit 61. Wird 61 gecheckt, muss als nächstes 71 gecheckt werden. Checkt man 61 nicht, geht man auf 60.';
+  final String _metaText = 'Level: Fortgeschritten\nFokus: Doubles, Finishing\nDauer: 5 Minuten - unbegrenzt';
   Finish _nextTarget = Finishes().getByValue(61);
   String _question = 'Wurde das Finish getroffen?';
   String _additionalText = '';
@@ -103,7 +106,14 @@ class Survive61 implements Game {
     return '${_nextTarget.value}';
   }
 
+  @override
+  String getStatStringTMP() {
+    return 'Dauer: tbd\n\nGetroffene Finishes: tbd\n\nHöchstes Finish: 85\n\nNiedrigstes Finish: 53';
+  }
+
   String get name => _name;
+  String get description => _description;
+  String get metaText => _metaText;
   dynamic get nextTarget => _nextTarget;
   String get question => _question;
   String get additionalText => _additionalText;

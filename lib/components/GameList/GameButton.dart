@@ -1,5 +1,5 @@
 import 'package:dartsdrill/models/Game.dart';
-import 'package:dartsdrill/screens/GameMode.dart';
+import 'package:dartsdrill/screens/GameStart.dart';
 import 'package:flutter/material.dart';
 
 class GameButton extends StatelessWidget {
@@ -20,7 +20,7 @@ class GameButton extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return GameMode(_game);
+              return GameStartScreen(_game, null);
             }),
           );
         },
