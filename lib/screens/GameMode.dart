@@ -1,13 +1,19 @@
 import 'package:dartsdrill/components/GameMode/AnswerArea.dart';
 import 'package:dartsdrill/components/GameMode/TargetArea.dart';
-import 'package:dartsdrill/components/GameMode/StatsFooter.dart';
+import 'package:dartsdrill/components/GameMode/StatsArea.dart';
 import 'package:dartsdrill/models/Answer.dart';
 import 'package:dartsdrill/models/Game.dart';
+import 'package:dartsdrill/models/Plan.dart';
+import 'package:dartsdrill/screens/GameStart.dart';
+import 'package:dartsdrill/screens/PlanSummary.dart';
 import 'package:flutter/material.dart';
+
+import 'GameSummary.dart';
 
 class GameMode extends StatefulWidget {
   final Game game;
-  GameMode(this.game) {
+  final Plan? _plan;
+  GameMode(this.game, this._plan) {
     game.start();
   }
   @override
@@ -30,9 +36,7 @@ class _GameModeState extends State<GameMode> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
-      if (widget.game.isFinished) {
-        Navigator.pop(context);
-      }
+      handleGameEnd(widget, context);
     });
     final AlertDialog dialog = _getDialog();
     final AppBar appBar = getAppBar(_resetThrow, widget, context, dialog);
@@ -63,7 +67,7 @@ class _GameModeState extends State<GameMode> {
               child: AnswerArea(_registerThrow, widget.game, appBarHeight),
               flex: 8,
             ),
-            StatsFooter(widget.game, appBarHeight)
+            StatsArea(widget.game, appBarHeight),
           ],
         ),
       ),
@@ -119,3 +123,31 @@ AppBar getAppBar(Function _resetThrow, GameMode widget, BuildContext context, Al
         )
       ],
     );
+
+void handleGameEnd(GameMode widget, BuildContext context) {
+  late MaterialPageRoute _route;
+  if (widget.game.isFinished) {
+    if (widget._plan != null) {
+      if (widget._plan!.games.length - 1 == widget._plan!.currentGameIndex) {
+        _route = MaterialPageRoute(builder: (context) {
+          return PlanSummaryScreen(widget._plan ?? Plan());
+        });
+      } else {
+        widget._plan!.incrementIndex();
+        _route = MaterialPageRoute(builder: (context) {
+          return GameStartScreen(widget._plan!.games[widget._plan!.currentGameIndex], widget._plan);
+        });
+      }
+    } else {
+      _route = MaterialPageRoute(builder: (context) {
+        return GameSummaryScreen(widget.game);
+      });
+    }
+    // Navigator.pop(context);
+    Navigator.pop(context);
+    Navigator.push(
+      context,
+      _route,
+    );
+  }
+}

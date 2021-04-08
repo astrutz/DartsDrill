@@ -1,10 +1,10 @@
 import 'package:dartsdrill/models/Game.dart';
 import 'package:flutter/material.dart';
 
-class StatsFooter extends StatelessWidget {
+class StatsArea extends StatelessWidget {
   final Game game;
   final double height;
-  StatsFooter(this.game, this.height);
+  StatsArea(this.game, this.height);
 
   @override
   Widget build(BuildContext context) {
