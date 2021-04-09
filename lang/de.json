@@ -1,0 +1,45 @@
+{
+    "General.no": "Nein",
+    "General.yes": "Ja",
+    "General.help": "Hilfe",
+    "General.settings": "Einstellungen",
+    "General.start": "Starten",
+    "General.games": "Spiele",
+    "General.finish": "Abschließen",
+    "General.login": "Anmelden",
+    "General.stats": "Statistiken",
+    "General.importData": "Daten importieren",
+    "General.aboutUs": "Über uns",
+
+    "GameMode.lastThrows": "Letzte Würfe:",
+    "GameMode.noScore": "No Score",
+    "GameMode.nextTarget": "Nächstes Ziel",
+    "GameMode.startTraininggame": "Trainingsspiel starten",
+    "GameMode.cancelTraininggame": "Trainingsspiel abbrechen",
+    "GameMode.traininggameFinished": "Trainingsspiel absolviert",
+    "GameMode.myTrainingPlans": "Meine Trainingspläne",
+    "GameMode.addPlan": "Plan hinzufügen",
+    "GameMode.cancelTraininggameQuestion": "Willst du dieses Spiel wirklich abbrechen? Dein Fortschritt wird nicht gespeichert.",
+    "GameMode.resetLastThrow": "Letzten Wurf zurücksetzen",
+    "GameMode.cancelGame": "Spiel abbrechen",
+
+    "AroundTheWorld.name": "Around The World",
+    "AroundTheWorld.description": "In diesem Spiel geht es darum jedes Feld nacheinander zu treffen. Man beginnt mit der Single 1. Sobald man sie getroffen hat, geht es mit Single 2, Single 3 etc. weiter, bis man mit dem Single Bull abschließt. Fortgeschrittene Spiele können statt Singles auch Doubles oder Trebles anvisieren.",
+    "AroundTheWorld.metaText": "Level: Anfänger - Fortgeschritten\nFokus: Singles\nDauer: 10 Minuten",
+    "AroundTheWorld.question": "Wie viele Felder wurden getroffen?",
+
+    "Survive61.name": "Survive 61",
+    "Survive61.description": "Bei Survive 61 gilt es ein Finish mit drei Darts zu checken. Checkt man nicht, sinkt der Score um 1 und man versucht das nächste Finish. Checkt man, erhöht man um 10. Man beginnt mit 61. Wird 61 gecheckt, muss als nächstes 71 gecheckt werden. Checkt man 61 nicht, muss als nächstes 60 gecheckt werden",
+    "Survive61.metaText": "Level: Fortgeschritten\nFokus: Doubles, Finishes\nDauer: 5 Minuten - unbegrenzt",
+    "Survive61.question": "Wurde das Finish getroffen?",
+
+    "Bobs27.name": "Bob's 27",
+    "Bobs27.description": "Man beginnt mit einem Punktestand von 27 und 3 Darts auf Double 1, dann Double 2, Double 3 etc. bis Bullseye. Für jeden Treffer wird der geworfenen Score (D1 = 2 Punkte, D2 = 4 Punkte etc.) zum Punktestand addiert. Trifft man mit 3 Darts das Double nicht, wird der Wert des Doubles vom Punktestand abgezogen (z.B. 14 bei Double 7). ",
+    "Bobs27.metaText": "Level: Anfänger - Fortgeschritten\nFokus: Doubles\nDauer: 15 Minuten",
+    "Bobs27.question": "Wie oft wurde das Double getroffen?",
+
+    "ProWarmup.name": "Pro Warmup",
+    "ProWarmup.description": "Aufwärmroutine für Turniere, die Liga oder das Training zuhause.",
+    "ProWarmup.metaText": "Level: Anfänger\nFokus: Aufwärmen\nDauer: 15 Minuten"
+    
+}

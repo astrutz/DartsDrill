@@ -1,20 +1,29 @@
 import 'package:dartsdrill/models/Answer.dart';
 import 'package:dartsdrill/models/Fields.dart';
 import 'package:dartsdrill/models/ThrowSet.dart';
+import 'package:dartsdrill/services/localizations.dart';
 
 import '../Game.dart';
 
-class AroundTheWorldGame implements Game {
-  final String _name = 'Around the World';
-  final String _description = 'todo';
-  final String _metaText = 'Level: Anfänger\nFokus: Sccoring\nDauer: 10 Minuten';
+class AroundTheWorld implements Game {
+  AroundTheWorld(this.localizations) {
+    _name = localizations.translate('AroundTheWorld', 'name');
+    _description = localizations.translate('AroundTheWorld', 'description');
+    _metaText = localizations.translate('AroundTheWorld', 'metaText');
+    _question = localizations.translate('AroundTheWorld', 'question');
+  }
+
+  AppLocalizations localizations;
+  late String _name;
+  late String _description;
+  late String _metaText;
   Field _nextTarget = Fields().getByName('S1');
-  String _question = 'Wie viele Felder wurden getroffen?';
+  late String _question;
   String _additionalText = '';
   List<Answer> _answers = [Answer('0', 0, true), Answer('1', 1, true), Answer('2', 2, true), Answer('3', 3, true)];
   List<ThrowSet> _lastThrows = [];
   bool _isFinished = false;
-  Fields _fields = Fields();
+  final Fields _fields = Fields();
 
   @override
   start() {
@@ -87,14 +96,14 @@ class AroundTheWorldGame implements Game {
 
   @override
   String getLastTargetText() {
-    String _throwString = 'Letzte Würfe:\n';
+    String _throwString = localizations.translate('GameMode', 'lastThrows') + '\n';
     if (_lastThrows.isEmpty) {
       return '';
     }
     List<ThrowSet> _lastFiveThrows = _lastThrows.length >= 5 ? _lastThrows.sublist(_lastThrows.length - 5, _lastThrows.length) : _lastThrows;
     _lastFiveThrows.forEach((throwSet) {
       if (throwSet.getScore() == 0) {
-        _throwString += 'No Score';
+        _throwString += localizations.translate('GameMode', 'noScore');
       } else {
         List<Field?> fields = throwSet.getThrows();
         if (fields[0]?.value != 0) {
@@ -142,6 +151,7 @@ class AroundTheWorldGame implements Game {
 
   @override
   String getStatStringTMP() {
+    // TODO
     return 'Dauer: tbd\n\nGetroffene Finishes: tbd\n\nHöchstes Finish: 85\n\nNiedrigstes Finish: 53';
   }
 

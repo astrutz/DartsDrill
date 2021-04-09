@@ -7,8 +7,6 @@ class Plan {
   late int _currentGameIndex;
   late final List<Game> _games;
 
-  // void start() {}
-
   String get name => _name;
   String get description => _description;
   String get metaText => _metaText;

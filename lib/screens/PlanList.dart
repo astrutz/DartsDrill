@@ -1,19 +1,21 @@
 import 'package:dartsdrill/models/Plan.dart';
 import 'package:dartsdrill/screens/PlanStart.dart';
 import 'package:dartsdrill/models/plans/ProWarmup.dart';
+import 'package:dartsdrill/services/localizations.dart';
 import 'package:flutter/material.dart';
 
 class PlanListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meine Trainingspläne'),
+        title: Text(localizations.translate('GameMode', 'myTrainingPlans')),
         brightness: Brightness.dark,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add),
-            tooltip: 'Plan hinzufügen',
+            tooltip: localizations.translate('GameMode', 'addPlan'),
             onPressed: () {
               print('tbd'); // TODO
             },
@@ -22,7 +24,7 @@ class PlanListScreen extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
-          for (Plan plan in _getPlans())
+          for (Plan plan in _getPlans(localizations))
             Column(
               children: [
                 ListTile(
@@ -47,6 +49,8 @@ class PlanListScreen extends StatelessWidget {
   }
 }
 
-List<Plan> _getPlans() {
-  return [ProWarmup(), ProWarmup(), ProWarmup()]; // TODO
+List<Plan> _getPlans(AppLocalizations localizations) {
+  return [
+    ProWarmup(localizations),
+  ]; // TODO
 }

@@ -13,8 +13,6 @@ class Game {
   late List<ThrowSet> _lastThrows;
   late bool _isFinished;
 
-  Game(this._name);
-
   void start() {}
   void registerThrow(Answer answer) {}
   void updateLastThrows(Answer answer) {}

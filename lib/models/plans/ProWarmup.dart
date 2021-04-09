@@ -1,14 +1,23 @@
 import 'package:dartsdrill/models/Game.dart';
 import 'package:dartsdrill/models/Plan.dart';
-import 'package:dartsdrill/models/games/AroundTheWorldGame.dart';
+import 'package:dartsdrill/models/games/AroundTheWorld.dart';
 import 'package:dartsdrill/models/games/Survive61.dart';
+import 'package:dartsdrill/services/localizations.dart';
 
 class ProWarmup implements Plan {
-  final String _name = 'Pro Warmup';
-  final String _description = 'Aufwärmroutine für Turniere, die Liga oder das Training.';
-  final String _metaText = 'Level: Anfänger\nFokus: Aufwärmen\nDauer: 15 Minuten';
+  ProWarmup(this.localizations) {
+    _games = [AroundTheWorld(localizations), Survive61(localizations)];
+    _name = localizations.translate('ProWarmup', 'name');
+    _description = localizations.translate('ProWarmup', 'description');
+    _metaText = localizations.translate('ProWarmup', 'metaText');
+  }
+
+  late AppLocalizations localizations;
+  late String _name;
+  late String _description;
+  late String _metaText;
   int _currentGameIndex = 0;
-  List<Game> _games = [AroundTheWorldGame(), Survive61()];
+  late List<Game> _games;
 
   String get name => _name;
   String get description => _description;
@@ -21,10 +30,10 @@ class ProWarmup implements Plan {
 
   void resetGames() {
     _currentGameIndex = 0;
-    _games = [AroundTheWorldGame(), Survive61()];
+    _games = [AroundTheWorld(localizations), Survive61(localizations)];
   }
 
-  String getStatStringTMP() => 'TODO';
+  String getStatStringTMP() => 'TODO'; // TODO
 
   List<Game> get games => _games;
 }

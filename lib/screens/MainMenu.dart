@@ -1,4 +1,5 @@
 import 'package:dartsdrill/screens/PlanList.dart';
+import 'package:dartsdrill/services/localizations.dart';
 import 'package:flutter/material.dart';
 import 'GameList.dart';
 import '../components/MainMenu/MenuButton.dart';
@@ -6,15 +7,16 @@ import '../components/MainMenu/MenuButton.dart';
 class MainMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Map> screens = getScreens();
+    AppLocalizations localizations = AppLocalizations.of(context);
+    List<Map> screens = getScreens(localizations);
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.account_circle),
-            tooltip: 'Login',
+            tooltip: localizations.translate('General', 'login'),
             onPressed: () {
-              print('tbd');
+              // TODO
             },
           )
         ],
@@ -43,15 +45,15 @@ class MainMenuScreen extends StatelessWidget {
     );
   }
 
-  List<Map> getScreens() {
+  List<Map> getScreens(AppLocalizations localizations) {
     return [
-      {'title': 'Trainingsspiel starten', 'screen': GameListScreen(), 'icon': Icons.play_arrow_outlined},
-      {'title': 'Meine Trainingspläne', 'screen': PlanListScreen(), 'icon': Icons.calendar_today_rounded},
-      {'title': 'Statistiken', 'icon': Icons.data_usage},
-      {'title': 'Daten importieren', 'icon': Icons.import_export},
-      {'title': 'Einstellungen', 'icon': Icons.settings},
-      {'title': 'Über uns', 'icon': Icons.code},
-      {'title': 'Hilfe', 'icon': Icons.live_help_outlined},
+      {'title': localizations.translate('GameMode', 'startTraininggame'), 'screen': GameListScreen(), 'icon': Icons.play_arrow_outlined},
+      {'title': localizations.translate('GameMode', 'myTrainingPlans'), 'screen': PlanListScreen(), 'icon': Icons.calendar_today_rounded},
+      {'title': localizations.translate('General', 'stats'), 'icon': Icons.data_usage},
+      {'title': localizations.translate('General', 'importData'), 'icon': Icons.import_export},
+      {'title': localizations.translate('General', 'settings'), 'icon': Icons.settings},
+      {'title': localizations.translate('General', 'aboutUs'), 'icon': Icons.code},
+      {'title': localizations.translate('General', 'help'), 'icon': Icons.live_help_outlined},
     ];
   }
 }

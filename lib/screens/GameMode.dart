@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:dartsdrill/components/GameMode/AnswerArea.dart';
 import 'package:dartsdrill/components/GameMode/TargetArea.dart';
 import 'package:dartsdrill/components/GameMode/StatsArea.dart';
@@ -6,8 +7,7 @@ import 'package:dartsdrill/models/Game.dart';
 import 'package:dartsdrill/models/Plan.dart';
 import 'package:dartsdrill/screens/GameStart.dart';
 import 'package:dartsdrill/screens/PlanSummary.dart';
-import 'package:flutter/material.dart';
-
+import 'package:dartsdrill/services/localizations.dart';
 import 'GameSummary.dart';
 
 class GameMode extends StatefulWidget {
@@ -38,8 +38,9 @@ class _GameModeState extends State<GameMode> {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       handleGameEnd(widget, context);
     });
-    final AlertDialog dialog = _getDialog();
-    final AppBar appBar = getAppBar(_resetThrow, widget, context, dialog);
+    AppLocalizations localizations = AppLocalizations.of(context);
+    final AlertDialog dialog = _getDialog(localizations);
+    final AppBar appBar = getAppBar(_resetThrow, widget, context, dialog, localizations);
     double appBarHeight = appBar.preferredSize.height;
     return WillPopScope(
       onWillPop: () {
@@ -74,9 +75,9 @@ class _GameModeState extends State<GameMode> {
     );
   }
 
-  AlertDialog _getDialog() => AlertDialog(
-        title: Text('Trainingsspiel abbrechen'),
-        content: Text('Willst du dieses Spiel wirklich abbrechen? Dein Fortschritt wird nicht gespeichert.'),
+  AlertDialog _getDialog(AppLocalizations localizations) => AlertDialog(
+        title: Text(localizations.translate('GameMode', 'cancelTraininggame')),
+        content: Text(localizations.translate('GameMode', 'cancelTraininggameQuestion')),
         actions: [
           TextButton(
             onPressed: () {
@@ -95,28 +96,28 @@ class _GameModeState extends State<GameMode> {
       );
 }
 
-AppBar getAppBar(Function _resetThrow, GameMode widget, BuildContext context, AlertDialog dialog) => AppBar(
+AppBar getAppBar(Function _resetThrow, GameMode widget, BuildContext context, AlertDialog dialog, AppLocalizations localizations) => AppBar(
       title: Text(widget.game.name),
       brightness: Brightness.dark,
       automaticallyImplyLeading: false,
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.settings_backup_restore),
-          tooltip: 'Letzten Wurf zurücksetzen',
+          tooltip: localizations.translate('GameMode', 'resetLastThrow'),
           onPressed: () {
             _resetThrow();
           },
         ),
         IconButton(
           icon: const Icon(Icons.help_outline),
-          tooltip: 'Hilfe',
+          tooltip: localizations.translate('General', 'help'),
           onPressed: () {
-            print('tbd');
+            // TODO
           },
         ),
         IconButton(
           icon: const Icon(Icons.cancel_outlined),
-          tooltip: 'Spiel abbrechen',
+          tooltip: localizations.translate('GameMode', 'cancelGame'),
           onPressed: () {
             showDialog<void>(context: context, builder: (context) => dialog);
           },
@@ -143,7 +144,6 @@ void handleGameEnd(GameMode widget, BuildContext context) {
         return GameSummaryScreen(widget.game);
       });
     }
-    // Navigator.pop(context);
     Navigator.pop(context);
     Navigator.push(
       context,

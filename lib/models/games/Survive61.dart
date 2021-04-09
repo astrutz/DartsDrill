@@ -1,16 +1,24 @@
 import 'package:dartsdrill/models/Finishes.dart';
 import 'package:dartsdrill/models/ThrowSet.dart';
 import 'package:dartsdrill/models/Answer.dart';
+import 'package:dartsdrill/services/localizations.dart';
 
 import '../Game.dart';
 
 class Survive61 implements Game {
-  final String _name = 'Survive 61';
-  final String _description =
-      'Bei Survive 61 gilt es ein Finish mit drei Darts zu checken. Checkt man nicht, sinkt der Score um 1 und man versucht das nächste Finish. Checkt man, erhöht man um 10. Man beginnt mit 61. Wird 61 gecheckt, muss als nächstes 71 gecheckt werden. Checkt man 61 nicht, geht man auf 60.';
-  final String _metaText = 'Level: Fortgeschritten\nFokus: Doubles, Finishing\nDauer: 5 Minuten - unbegrenzt';
+  Survive61(this.localizations) {
+    _name = localizations.translate('Survive61', 'name');
+    _description = localizations.translate('Survive61', 'description');
+    _metaText = localizations.translate('Survive61', 'metaText');
+    _question = localizations.translate('Survive61', 'question');
+  }
+
+  AppLocalizations localizations;
+  late String _name;
+  late String _description;
+  late String _metaText;
   Finish _nextTarget = Finishes().getByValue(61);
-  String _question = 'Wurde das Finish getroffen?';
+  late String _question;
   String _additionalText = '';
   List<Answer> _answers = [];
   List<ThrowSet> _lastThrows = [];
@@ -23,10 +31,10 @@ class Survive61 implements Game {
     _lastThrows = [];
     _lastTargets = [];
     _answers = [
-      Answer('Nein', 0, true),
-      Answer('Ja\n(1 Dart)', 1, Finishes().getByValue(61).minimumDarts == 1),
-      Answer('Ja\n(2 Darts)', 2, Finishes().getByValue(61).minimumDarts <= 2),
-      Answer('Ja\n(3 Darts)', 3, Finishes().getByValue(61).minimumDarts <= 3)
+      Answer(localizations.translate('General', 'no'), 0, true),
+      Answer(localizations.translate('General', 'yes') + '\n(1 Dart)', 1, _nextTarget.minimumDarts == 1),
+      Answer(localizations.translate('General', 'yes') + '\n(2 Darts)', 2, _nextTarget.minimumDarts <= 2),
+      Answer(localizations.translate('General', 'yes') + '\n(3 Darts)', 3, _nextTarget.minimumDarts <= 3)
     ];
   }
 
@@ -43,10 +51,10 @@ class Survive61 implements Game {
       _nextTarget = Finishes().getByValue(_nextTarget.value + 10);
     }
     _answers = [
-      Answer('Nein', 0, true),
-      Answer('Ja\n(1 Dart)', 1, _nextTarget.minimumDarts == 1),
-      Answer('Ja\n(2 Darts)', 2, _nextTarget.minimumDarts <= 2),
-      Answer('Ja\n(3 Darts)', 3, _nextTarget.minimumDarts <= 3)
+      Answer(localizations.translate('General', 'no'), 0, true),
+      Answer(localizations.translate('General', 'yes') + '\n(1 Dart)', 1, _nextTarget.minimumDarts == 1),
+      Answer(localizations.translate('General', 'yes') + '\n(2 Darts)', 2, _nextTarget.minimumDarts <= 2),
+      Answer(localizations.translate('General', 'yes') + '\n(3 Darts)', 3, _nextTarget.minimumDarts <= 3)
     ];
   }
 
@@ -74,7 +82,7 @@ class Survive61 implements Game {
 
   @override
   String getLastTargetText() {
-    String _throwString = 'Letzte Würfe:\n';
+    String _throwString = localizations.translate('GameMode', 'lastThrows') + '\n';
     if (_lastThrows.isEmpty) {
       return '';
     }
@@ -108,6 +116,7 @@ class Survive61 implements Game {
 
   @override
   String getStatStringTMP() {
+    // TODO
     return 'Dauer: tbd\n\nGetroffene Finishes: tbd\n\nHöchstes Finish: 85\n\nNiedrigstes Finish: 53';
   }
 

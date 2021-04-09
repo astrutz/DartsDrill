@@ -1,14 +1,14 @@
 class Fields {
   final List<Field> _fields = [];
   Fields() {
-    _fields.add(Field('NS', 'No Score'));
+    _fields.add(Field('NS', 'No Score', 0));
     for (int i = 1; i < 21; i++) {
-      _fields.add(Field('S$i', 'Single $i'));
-      _fields.add(Field('D$i', 'Double $i'));
-      _fields.add(Field('T$i', 'Triple $i'));
+      _fields.add(Field('S$i', 'Single $i', i));
+      _fields.add(Field('D$i', 'Double $i', i));
+      _fields.add(Field('T$i', 'Triple $i', i));
     }
-    _fields.add(Field('25', 'Single Bull'));
-    _fields.add(Field('BULL', 'Double Bull'));
+    _fields.add(Field('25', 'Single Bull', 25));
+    _fields.add(Field('BULL', 'Double Bull', 25));
   }
 
   Field getByName(name) {
@@ -22,10 +22,11 @@ class Fields {
 class Field {
   final String _name;
   final String _description;
+  final int segment;
   late int _value;
   late FieldType _type;
 
-  Field(this._name, this._description) {
+  Field(this._name, this._description, this.segment) {
     if (_name == '25') {
       _value = 25;
     } else if (_name == 'BULL') {

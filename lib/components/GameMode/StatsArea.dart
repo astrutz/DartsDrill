@@ -9,7 +9,7 @@ class StatsArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('tbd'),
+      child: Text('tbd'), // TODO
       height: height,
       width: double.infinity,
       color: Theme.of(context).primaryColor,

@@ -1,6 +1,7 @@
 import 'package:dartsdrill/models/Game.dart';
 import 'package:dartsdrill/models/Plan.dart';
 import 'package:dartsdrill/screens/GameMode.dart';
+import 'package:dartsdrill/services/localizations.dart';
 import 'package:flutter/material.dart';
 
 class GameStartScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class GameStartScreen extends StatelessWidget {
   GameStartScreen(this._game, this._plan);
   @override
   Widget build(BuildContext context) {
+    AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(_game.name),
@@ -16,9 +18,9 @@ class GameStartScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
-            tooltip: 'Einstellungen',
+            tooltip: localizations.translate('General', 'settings'),
             onPressed: () {
-              print('tbd'); // TODO
+              // TODO
             },
           )
         ],
@@ -57,7 +59,7 @@ class GameStartScreen extends StatelessWidget {
           Container(
             child: ElevatedButton(
               child: Text(
-                'Starten',
+                localizations.translate('General', 'start'),
               ),
               onPressed: () {
                 Navigator.pop(context);

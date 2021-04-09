@@ -1,4 +1,5 @@
 import 'package:dartsdrill/models/Game.dart';
+import 'package:dartsdrill/services/localizations.dart';
 import 'package:flutter/material.dart';
 
 class GameSummaryScreen extends StatelessWidget {
@@ -6,9 +7,10 @@ class GameSummaryScreen extends StatelessWidget {
   GameSummaryScreen(this.game);
   @override
   Widget build(BuildContext context) {
+    AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trainingsspiel absolviert'),
+        title: Text(localizations.translate('GameMode', 'traininggameFinished')),
         brightness: Brightness.dark,
         automaticallyImplyLeading: false,
       ),
@@ -37,13 +39,13 @@ class GameSummaryScreen extends StatelessWidget {
             flex: 1,
           ),
           Expanded(
-            child: Text('tbd Stats'),
+            child: Text('tbd Stats'), // TODO
             flex: 1,
           ),
           Container(
             child: ElevatedButton(
               child: Text(
-                'Abschließen',
+                localizations.translate('General', 'finish'),
               ),
               onPressed: () => Navigator.pop(context),
             ),

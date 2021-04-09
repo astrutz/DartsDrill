@@ -1,6 +1,7 @@
 import 'package:dartsdrill/models/Game.dart';
 import 'package:dartsdrill/models/Plan.dart';
 import 'package:dartsdrill/screens/PlanMode.dart';
+import 'package:dartsdrill/services/localizations.dart';
 import 'package:flutter/material.dart';
 
 class PlanStartScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class PlanStartScreen extends StatelessWidget {
   PlanStartScreen(this._plan);
   @override
   Widget build(BuildContext context) {
+    AppLocalizations localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(_plan.name),
@@ -15,7 +17,7 @@ class PlanStartScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
-            tooltip: 'Einstellungen',
+            tooltip: localizations.translate('General', 'settings'),
             onPressed: () {
               print('tbd'); // TODO
             },
@@ -51,7 +53,7 @@ class PlanStartScreen extends StatelessWidget {
                 ),
                 Container(
                   child: Text(
-                    'Spiele',
+                    localizations.translate('General', 'games'),
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   margin: EdgeInsets.fromLTRB(10, 40, 10, 20),
@@ -77,7 +79,7 @@ class PlanStartScreen extends StatelessWidget {
           Container(
             child: ElevatedButton(
               child: Text(
-                'Starten',
+                localizations.translate('General', 'start'),
               ),
               onPressed: () {
                 Navigator.pop(context);
