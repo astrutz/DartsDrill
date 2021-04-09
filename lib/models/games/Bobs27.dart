@@ -14,9 +14,9 @@ class Bobs27 implements Game {
   }
 
   AppLocalizations localizations;
-  late String _name;
-  late String _description;
-  late String _metaText;
+  late final String _name;
+  late final String _description;
+  late final String _metaText;
   Field _nextTarget = Fields().getByName('D1');
   late String _question;
   String _additionalText = '';
@@ -29,6 +29,7 @@ class Bobs27 implements Game {
   void start() {
     _nextTarget = _fields.getByName('D1');
     _lastThrows = [];
+    _isFinished = false;
   }
 
   @override

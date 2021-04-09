@@ -14,9 +14,9 @@ class Survive61 implements Game {
   }
 
   AppLocalizations localizations;
-  late String _name;
-  late String _description;
-  late String _metaText;
+  late final String _name;
+  late final String _description;
+  late final String _metaText;
   Finish _nextTarget = Finishes().getByValue(61);
   late String _question;
   String _additionalText = '';
@@ -36,6 +36,7 @@ class Survive61 implements Game {
       Answer(localizations.translate('General', 'yes') + '\n(2 Darts)', 2, _nextTarget.minimumDarts <= 2),
       Answer(localizations.translate('General', 'yes') + '\n(3 Darts)', 3, _nextTarget.minimumDarts <= 3)
     ];
+    _isFinished = false;
   }
 
   @override

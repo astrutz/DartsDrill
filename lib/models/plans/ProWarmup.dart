@@ -13,9 +13,9 @@ class ProWarmup implements Plan {
   }
 
   late AppLocalizations localizations;
-  late String _name;
-  late String _description;
-  late String _metaText;
+  late final String _name;
+  late final String _description;
+  late final String _metaText;
   int _currentGameIndex = 0;
   late List<Game> _games;
 

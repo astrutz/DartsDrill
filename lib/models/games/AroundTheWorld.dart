@@ -14,9 +14,9 @@ class AroundTheWorld implements Game {
   }
 
   AppLocalizations localizations;
-  late String _name;
-  late String _description;
-  late String _metaText;
+  late final String _name;
+  late final String _description;
+  late final String _metaText;
   Field _nextTarget = Fields().getByName('S1');
   late String _question;
   String _additionalText = '';
@@ -29,6 +29,7 @@ class AroundTheWorld implements Game {
   start() {
     _nextTarget = _fields.getByName('S1');
     _lastThrows = [];
+    _isFinished = false;
   }
 
   @override
@@ -145,9 +146,7 @@ class AroundTheWorld implements Game {
   }
 
   @override
-  String getNextTargetText() {
-    return _nextTarget.description;
-  }
+  String getNextTargetText() => _nextTarget.description;
 
   @override
   String getStatStringTMP() {
